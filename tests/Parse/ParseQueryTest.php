@@ -1456,16 +1456,16 @@ class ParseQueryTest extends \PHPUnit_Framework_TestCase
     {
         $numbers = [3, 1, 2];
         $objects = [];
-        $this->saveObjects(
-            3,
-            function ($i) use ($numbers, &$objects) {
-                $obj = ParseObject::create('TestObject');
-                $obj->set('number', $numbers[$i]);
-                $objects[] = $obj;
 
-                return $obj;
-            }
-        );
+        foreach ($numbers as $k => $number) {
+            $obj = ParseObject::create('TestObject');
+            $obj->set('number', $number);
+            $obj->save();
+            $objects[] = $obj;
+            // wait for storing different updatedAt
+            sleep(1);
+        }
+
         $objects[1]->set('number', 4);
         $objects[1]->save();
         $query = new ParseQuery('TestObject');
