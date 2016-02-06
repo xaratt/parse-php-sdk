@@ -133,9 +133,10 @@ class ParseHooksTest extends PHPUnit_Framework_TestCase
 
     public function testDeleteFunction()
     {
-        self::$hooks->createFunction('foo', 'https://api.example.com/foo');
+        $func_name = 'foo' . time();
+        self::$hooks->createFunction($func_name, 'https://api.example.com/foo');
 
-        $deleted_function = self::$hooks->deleteFunction('foo');
+        $deleted_function = self::$hooks->deleteFunction($func_name);
         $this->assertEmpty($deleted_function);
     }
 
