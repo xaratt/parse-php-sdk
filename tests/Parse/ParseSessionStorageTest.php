@@ -33,7 +33,7 @@ class ParseSessionStorageTest extends \PHPUnit_Framework_TestCase
 
     public function testIsUsingParseSession()
     {
-        $this->assertTrue(self::$parseStorage instanceof Parse\ParseSessionStorage);
+        $this->assertTrue(self::$parseStorage instanceof ParseSessionStorage);
     }
 
     public function testSetAndGet()
