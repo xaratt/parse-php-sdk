@@ -931,7 +931,12 @@ class ParseObject implements Encodable
      */
     private function getSaveJSON()
     {
-        return ParseClient::_encode($this->operationSet, true);
+        $operationSet = $this->operationSet;
+        if (!$operationSet) {
+            // Parse REST API needs {} not [] for "body" request property
+            $operationSet = new \stdClass();
+        }
+        return ParseClient::_encode($operationSet, true);
     }
 
     /**
