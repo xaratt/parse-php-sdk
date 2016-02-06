@@ -20,6 +20,7 @@ class ParseACLTest extends \PHPUnit_Framework_TestCase
     {
         Helper::clearClass('_User');
         Helper::clearClass('Object');
+        ParseUser::logOut();
     }
 
     public function tearDown()
