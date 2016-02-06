@@ -20,6 +20,7 @@ class ParseRoleTest extends \PHPUnit_Framework_TestCase
         Helper::clearClass('_User');
         Helper::clearClass('_Role');
         Helper::clearClass('Things');
+        ParseUser::logOut();
     }
 
     public function tearDown()
