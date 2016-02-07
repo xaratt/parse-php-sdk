@@ -249,6 +249,10 @@ class ParseUserTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse($user3->isCurrent());
     }
 
+/*
+    Will be implemented later, see
+    https://github.com/ParsePlatform/parse-server/issues/275
+    https://github.com/ParsePlatform/parse-server/pull/187
     public function testPasswordReset()
     {
         $user = new ParseUser();
@@ -268,6 +272,7 @@ class ParseUserTest extends \PHPUnit_Framework_TestCase
         );
         ParseUser::requestPasswordReset('non_existent@example.com');
     }
+*/
 
     public function testUserAssociations()
     {
