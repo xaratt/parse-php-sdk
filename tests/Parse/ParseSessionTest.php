@@ -50,6 +50,7 @@ class ParseSessionTest extends \PHPUnit_Framework_TestCase
         $sessionToken = $session->getSessionToken();
 
         ParseUser::logOut();
+        sleep(1);
 
         $this->setExpectedException('Parse\ParseException', 'invalid session token');
         ParseUser::become($sessionToken);
