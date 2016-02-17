@@ -10,6 +10,8 @@ class ParseRelationTest extends \PHPUnit_Framework_TestCase
     public static function setUpBeforeClass()
     {
         Helper::setUp();
+        Helper::clearClass('ParentObject');
+        Helper::clearClass('ChildObject');
     }
 
     public function tearDown()
