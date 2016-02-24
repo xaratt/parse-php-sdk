@@ -23,7 +23,8 @@ class ParsePushTest extends \PHPUnit_Framework_TestCase
             [
             'channels' => [''],
             'data'     => ['alert' => 'sample message'],
-            ]
+            ],
+            true
         );
     }
 
@@ -35,7 +36,8 @@ class ParsePushTest extends \PHPUnit_Framework_TestCase
             [
             'data'  => ['alert' => 'iPhone 5 is out!'],
             'where' => $query,
-            ]
+            ],
+            true
         );
     }
 
@@ -47,7 +49,8 @@ class ParsePushTest extends \PHPUnit_Framework_TestCase
             'push_time'       => new \DateTime(),
             'expiration_time' => new \DateTime(),
             'channels'        => [],
-            ]
+            ],
+            true
         );
     }
 }
