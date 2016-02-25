@@ -26,11 +26,11 @@ class ParseSchemaTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        self::$schema = new ParseSchema('SchemaTest');
         // clear schemas before creating
-        foreach (['SchemaDeleteTest', 'SchemaTest_1', 'SchemaTest_2'] as $name) {
+        foreach (['SchemaTest', 'SchemaDeleteTest', 'SchemaTest_1', 'SchemaTest_2'] as $name) {
             (new ParseSchema($name))->delete();
         }
+        self::$schema = new ParseSchema('SchemaTest');
     }
 
     public function tearDown()
